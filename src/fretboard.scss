@@ -38,4 +38,31 @@
 
   > .inlay { z-index: 100; }
   > .frets { z-index: 200; }
+
+  // bottom shadow
+  &:after {
+    content: "";
+    position: absolute;
+    display: block;
+
+    margin: 0 .05em;
+    width: calc(100% - .1em);
+    height: .025em;
+    top: calc(100% - .025em);
+
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+
+    background-image: linear-gradient(
+      rgba(black, 0),
+      rgba(black, .2)
+    ),
+    linear-gradient(
+      90deg,
+      rgba(black, 0),
+      rgba(black, .2) .1em,
+      rgba(black, .2) calc(100% - .1em),
+      rgba(black, 0)
+    );
+  }
 }
