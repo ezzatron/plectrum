@@ -1,6 +1,6 @@
 {
   "name": "plectrum",
-  "description": "CSS framework for visualizing guitar fretboards",
+  "description": "A CSS framework for visualizing guitar fretboards.",
   "repository": "eloquent/plectrum",
   "author": {
     "name": "Erin Millard",
