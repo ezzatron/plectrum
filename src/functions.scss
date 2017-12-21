@@ -1,0 +1,11 @@
+@function fret-size($scale-length, $fret) {
+  $distance: 0;
+  $remainder: $scale-length;
+
+  @for $i from 1 through $fret {
+    $distance: $remainder / 17.817; // industry standard ratio
+    $remainder: $remainder - $distance;
+  }
+
+  @return $distance;
+}

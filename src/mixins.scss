@@ -1,0 +1,9 @@
+@mixin neck-scale ($scale-length, $frets) {
+  height: $scale-length;
+
+  > .fretboard > .frets > * {
+    @for $i from 1 through $frets {
+      &:nth-child(#{$i}) { height: fret-size($scale-length, $i); }
+    }
+  }
+}
