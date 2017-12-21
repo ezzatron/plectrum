@@ -1,18 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Cinzel+Decorative');
-
-// body rules are just for this demo
-body {
-  width: 2500px;
-  margin: 0;
-  padding: 0 0 40px 0;
-  display: flex;
-  justify-content: space-evenly;
-
-  font-size: 125px; // how big should 1 inch appear on screen?
-  background-color: #111;
-}
-
-// from here on out, 1em = 1 inch (except inlays)
+// 1em = 1 inch (except inlays)
 
 .fretboard {
   position: relative; // so that contents can be positioned absolute
@@ -26,30 +12,32 @@ body {
   border-bottom-right-radius: .1em;
 
   // approximation of an ebony fretboard
-  background-image:
-    linear-gradient( // bottom-left highlight
-      45deg,
-      rgba(85, 70, 70, 1),
-      rgba(85, 70, 70, 1) .03em,
-      rgba(85, 70, 70, 0) .07em
-    ),
-    linear-gradient( // bottom-right shadow
-      315deg,
-      rgba(17, 17, 17, 1),
-      rgba(17, 17, 17, 1) .03em,
-      rgba(17, 17, 17, 0) .07em
-    ),
-    linear-gradient( // ebony
-      90deg,
-      #554646,
-      #262222 1.5%,
-      #262222 10%,
-      #302626 40%,
-      #302626 60%,
-      #262222 90%,
-      #262222 98.5%,
-      #111
-    );
+  background-image: linear-gradient(
+    // bottom-left highlight
+    45deg,
+    rgba(85, 70, 70, 1),
+    rgba(85, 70, 70, 1) .03em,
+    rgba(85, 70, 70, 0) .07em
+  ),
+  linear-gradient(
+    // bottom-right shadow
+    315deg,
+    rgba(17, 17, 17, 1),
+    rgba(17, 17, 17, 1) .03em,
+    rgba(17, 17, 17, 0) .07em
+  ),
+  linear-gradient(
+    // ebony
+    90deg,
+    #554646,
+    #262222 1.5%,
+    #262222 10%,
+    #302626 40%,
+    #302626 60%,
+    #262222 90%,
+    #262222 98.5%,
+    #111
+  );
 
   .inlay {
     position: absolute; // so that it doesn't affect string layout
@@ -58,14 +46,12 @@ body {
     text-align: center;
     padding: 1em .5em; // note that ems here are different because of the font size change
 
-    font-family: 'Cinzel Decorative', cursive;
+    font-family: cursive;
     font-size: .3em;
     color: #DDDDA6; // approximation of ivory
 
     // imitation inset shadow for inlays
-    text-shadow:
-      -.04em -.01em .03em rgba(0, 0, 0, .8),
-      .02em .01em .02em rgba(255, 255, 255, .8);
+    text-shadow: -.04em -.01em .03em rgba(0, 0, 0, .8), .02em .01em .02em rgba(255, 255, 255, .8);
   }
 
   .strings {
@@ -206,44 +192,41 @@ body {
   }
 
   &[data-type="wound"] {
-    background-image:
-      repeating-linear-gradient(
-        -8deg,
-        rgba(0, 0, 0, .7) 0,
-        rgba(0, 0, 0, 0) .015em,
-        rgba(0, 0, 0, 0) .02em
-      ),
-      linear-gradient(
-        90deg,
-        rgba(0, 0, 0, .3) 10%,
-        rgba(255, 255, 255, .25) 15%,
-        rgba(255, 255, 255, .8) 30%,
-        rgba(255, 255, 255, .25) 45%,
-        rgba(0, 0, 0, .7) 90%
-      );
+    background-image: repeating-linear-gradient(
+      -8deg,
+      rgba(0, 0, 0, .7) 0,
+      rgba(0, 0, 0, 0) .015em,
+      rgba(0, 0, 0, 0) .02em
+    ),
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, .3) 10%,
+      rgba(255, 255, 255, .25) 15%,
+      rgba(255, 255, 255, .8) 30%,
+      rgba(255, 255, 255, .25) 45%,
+      rgba(0, 0, 0, .7) 90%
+    );
   }
 
   &[data-type="flat-wound"] {
-    background-image:
-      repeating-linear-gradient(
-        -8deg,
-        rgba(0, 0, 0, .3) 0,
-        rgba(0, 0, 0, 0) .01em,
-        rgba(0, 0, 0, 0) .036em
-      ),
-      linear-gradient(
-        90deg,
-        rgba(0, 0, 0, .3) 10%,
-        rgba(255, 255, 255, .25) 15%,
-        rgba(255, 255, 255, .8) 30%,
-        rgba(255, 255, 255, .25) 45%,
-        rgba(0, 0, 0, .7) 90%
-      );
+    background-image: repeating-linear-gradient(
+      -8deg,
+      rgba(0, 0, 0, .3) 0,
+      rgba(0, 0, 0, 0) .01em,
+      rgba(0, 0, 0, 0) .036em
+    ),
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, .3) 10%,
+      rgba(255, 255, 255, .25) 15%,
+      rgba(255, 255, 255, .8) 30%,
+      rgba(255, 255, 255, .25) 45%,
+      rgba(0, 0, 0, .7) 90%
+    );
   }
-}
 
-.strings > * {
   // materials
+
   &[data-material="steel"] { background-color: #DDD; }
   &[data-material="nickel"] { background-color: #BA9; }
   &[data-material="bronze"] { background-color: #F92; }
@@ -269,28 +252,30 @@ body {
   border-radius: .025em;
 
   background-color: #DDD;
-  background-image:
-    radial-gradient( // left bevel
-      .06em at -.01em .04em,
-      rgba(255, 255, 255, .8),
-      rgba(255, 255, 255, .8) 60%,
-      rgba(255, 255, 255, 0) 90%,
-      rgba(255, 255, 255, 0) 100%
-    ),
-    radial-gradient( // right bevel
-      .06em at calc(100% + .01em) .04em,
-      rgba(0, 0, 0, .9),
-      rgba(0, 0, 0, .6) 60%,
-      rgba(0, 0, 0, 0) 90%,
-      rgba(0, 0, 0, 0) 100%
-    ),
-    linear-gradient( // fret
-      rgba(0, 0, 0, .3) 10%,
-      rgba(255, 255, 255, .25) 15%,
-      rgba(255, 255, 255, .8) 30%,
-      rgba(255, 255, 255, .25) 45%,
-      rgba(0, 0, 0, .7) 90%
-    );
+  background-image: radial-gradient(
+    // left bevel
+    .06em at -.01em .04em,
+    rgba(255, 255, 255, .8),
+    rgba(255, 255, 255, .8) 60%,
+    rgba(255, 255, 255, 0) 90%,
+    rgba(255, 255, 255, 0) 100%
+  ),
+  radial-gradient(
+    // right bevel
+    .06em at calc(100% + .01em) .04em,
+    rgba(0, 0, 0, .9),
+    rgba(0, 0, 0, .6) 60%,
+    rgba(0, 0, 0, 0) 90%,
+    rgba(0, 0, 0, 0) 100%
+  ),
+  linear-gradient(
+    // fret
+    rgba(0, 0, 0, .3) 10%,
+    rgba(255, 255, 255, .25) 15%,
+    rgba(255, 255, 255, .8) 30%,
+    rgba(255, 255, 255, .25) 45%,
+    rgba(0, 0, 0, .7) 90%
+  );
 }
 
 // fret spacing

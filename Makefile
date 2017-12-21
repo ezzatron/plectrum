@@ -8,6 +8,10 @@ dist-build: dist/plectrum.css dist/plectrum.min.css
 clean:
 	rm -rf build dist
 
+.PHONY: lint
+lint: node_modules
+	node_modules/.bin/sass-lint -v
+
 dist/plectrum.css: build/plectrum.css dist
 	cp $< $@
 	cp $<.map $@.map
