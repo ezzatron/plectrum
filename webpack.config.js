@@ -38,12 +38,10 @@ module.exports = {
       title: 'Plectrum',
       template: 'test/index.html'
     }),
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin()
   ],
   devServer: {
     contentBase: 'test',
-    hot: true,
     historyApiFallback: true
   }
 }

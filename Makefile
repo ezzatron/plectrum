@@ -14,7 +14,7 @@ lint: node_modules
 
 .PHONY: serve
 serve: node_modules
-	node_modules/.bin/webpack-dev-server
+	node_modules/.bin/webpack-dev-server --hot
 
 dist/plectrum.css: build/plectrum.css dist
 	cp $< $@
