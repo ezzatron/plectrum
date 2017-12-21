@@ -1,5 +1,6 @@
 const HtmlPlugin = require('html-webpack-plugin')
 const path = require('path')
+const ReloadHtmlPlugin = require('reload-html-webpack-plugin')
 const webpack = require('webpack')
 
 module.exports = {
@@ -38,6 +39,7 @@ module.exports = {
       title: 'Plectrum',
       template: 'test/index.html'
     }),
+    new ReloadHtmlPlugin(),
     new webpack.NamedModulesPlugin()
   ],
   devServer: {
