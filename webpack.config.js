@@ -1,9 +1,6 @@
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlPlugin = require('html-webpack-plugin')
 const path = require('path')
 const webpack = require('webpack')
-
-const extractSass = new ExtractTextPlugin({filename: 'test.css'})
 
 module.exports = {
   entry: [
@@ -21,9 +18,11 @@ module.exports = {
     rules: [
       {
         test: /\.scss$/,
-        use: extractSass.extract({
-          use: [
+        use: [
             {
+              loader: 'style-loader',
+              options: {sourceMap: true}
+            }, {
               loader: 'css-loader',
               options: {sourceMap: true}
             }, {
@@ -31,19 +30,20 @@ module.exports = {
               options: {sourceMap: true}
             }
           ]
-        })
       }
     ]
   },
   plugins: [
-    extractSass,
     new HtmlPlugin({
       title: 'Plectrum',
       template: 'test/index.html'
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin()
   ],
   devServer: {
-    contentBase: 'web',
+    contentBase: 'test',
+    hot: true,
     historyApiFallback: true
   }
 }
