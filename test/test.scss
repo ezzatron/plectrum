@@ -1,18 +1,31 @@
 @import url("https://fonts.googleapis.com/css?family=Cinzel+Decorative");
 
-@import '../src/index.scss';
+@import "../src/index";
 
 body {
-  width: 2500px;
+  box-sizing: border-box;
   margin: 0;
-  padding: 0 0 40px 0;
-  display: flex;
-  justify-content: space-evenly;
 
-  font-size: 125px;
   background-color: #111;
 }
 
-.plectrum .fretboard .inlay {
-    font-family: "Cinzel Decorative", cursive;
+.plectrum {
+  display: flex;
+  width: 100%;
+
+  font-size: 125px;
+}
+
+.plectrum .neck {
+  flex-shrink: 0;
+  margin-left: .5em;
+
+  // fix for flexbox padding issue https://stackoverflow.com/questions/38993170/last-margin-padding-collapsing-in-flexbox
+  &:last-child {
+    border-right: .5em solid transparent;
+  }
+}
+
+.plectrum .neck > .fretboard > .inlay {
+  font-family: "Cinzel Decorative", cursive;
 }

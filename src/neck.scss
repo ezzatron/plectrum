@@ -1,0 +1,9 @@
+.plectrum .neck {
+  position: relative; // so that contents can be positioned absolute
+  display: flex; // so that strings stretch to full height
+
+  * { box-sizing: border-box; } // make sizing a bit more sane
+
+  > .fretboard { z-index: 100; }
+  > .strings   { z-index: 200; }
+}

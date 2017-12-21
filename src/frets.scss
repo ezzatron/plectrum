@@ -1,5 +1,4 @@
-.plectrum .fretboard > .frets {
-  position: absolute; // so that it doesn't affect string layout
+.plectrum .neck > .fretboard > .frets {
   width: 100%;
 
   > * {
