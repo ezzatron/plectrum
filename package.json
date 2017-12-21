@@ -1,0 +1,29 @@
+{
+  "name": "plectrum",
+  "description": "CSS framework for visualizing guitar fretboards",
+  "repository": "eloquent/plectrum",
+  "author": {
+    "name": "Erin Millard",
+    "email": "ezzatron@gmail.com",
+    "url": "http://ezzatron.com/"
+  },
+  "license": "MIT",
+  "scripts": {
+    "prepare": "make dist-build"
+  },
+  "files": [
+    "src",
+    "dist/plectrum.css",
+    "dist/plectrum.css.map",
+    "dist/plectrum.min.css",
+    "dist/plectrum.min.css.map"
+  ],
+  "main": "src/index.scss",
+  "version": "0.1.0",
+  "devDependencies": {
+    "autoprefixer": "^7.2.3",
+    "cssnano": "^3.10.0",
+    "node-sass": "^4.7.2",
+    "postcss-cli": "^4.1.1"
+  }
+}

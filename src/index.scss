@@ -1,0 +1,377 @@
+@import url('https://fonts.googleapis.com/css?family=Cinzel+Decorative');
+
+// body rules are just for this demo
+body {
+  width: 2500px;
+  margin: 0;
+  padding: 0 0 40px 0;
+  display: flex;
+  justify-content: space-evenly;
+
+  font-size: 125px; // how big should 1 inch appear on screen?
+  background-color: #111;
+}
+
+// from here on out, 1em = 1 inch (except inlays)
+
+.fretboard {
+  position: relative; // so that contents can be positioned absolute
+  display: flex;
+
+  * {
+    box-sizing: border-box; // make sizing a bit more sane
+  }
+
+  border-bottom-left-radius: .1em;
+  border-bottom-right-radius: .1em;
+
+  // approximation of an ebony fretboard
+  background-image:
+    linear-gradient( // bottom-left highlight
+      45deg,
+      rgba(85, 70, 70, 1),
+      rgba(85, 70, 70, 1) .03em,
+      rgba(85, 70, 70, 0) .07em
+    ),
+    linear-gradient( // bottom-right shadow
+      315deg,
+      rgba(17, 17, 17, 1),
+      rgba(17, 17, 17, 1) .03em,
+      rgba(17, 17, 17, 0) .07em
+    ),
+    linear-gradient( // ebony
+      90deg,
+      #554646,
+      #262222 1.5%,
+      #262222 10%,
+      #302626 40%,
+      #302626 60%,
+      #262222 90%,
+      #262222 98.5%,
+      #111
+    );
+
+  .inlay {
+    position: absolute; // so that it doesn't affect string layout
+    z-index: 100; // behind strings and frets
+    width: 100%;
+    text-align: center;
+    padding: 1em .5em; // note that ems here are different because of the font size change
+
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: .3em;
+    color: #DDDDA6; // approximation of ivory
+
+    // imitation inset shadow for inlays
+    text-shadow:
+      -.04em -.01em .03em rgba(0, 0, 0, .8),
+      .02em .01em .02em rgba(255, 255, 255, .8);
+  }
+
+  .strings {
+    z-index: 300; // above inlays and frets
+    padding: 0 .12em; // gap between edge of fretboard and outer strings
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between; // space strings evenly
+  }
+
+  .frets {
+    position: absolute; // so that it doesn't affect string layout
+    z-index: 200; // above inlays, below strings
+    width: 100%;
+  }
+}
+
+// individual string styles
+.strings > * {
+  display: block;
+
+  // defaults to highlight missing information
+  width: 1px;
+  background-color: #F00;
+
+  // string shadow
+  box-shadow: .04em 0 .02em 0 rgba(0, 0, 0, .5);
+
+  // border-radius: 1em; // this will probably be needed to terminate strings nicely
+
+  // gauges - more to come
+  &[data-gauge=".007"] { width: .007em; }
+  &[data-gauge=".008"] { width: .008em; }
+  &[data-gauge=".009"] { width: .009em; }
+  &[data-gauge=".010"] { width: .010em; }
+  &[data-gauge=".011"] { width: .011em; }
+  &[data-gauge=".012"] { width: .012em; }
+  &[data-gauge=".013"] { width: .013em; }
+  &[data-gauge=".014"] { width: .014em; }
+  &[data-gauge=".015"] { width: .015em; }
+  &[data-gauge=".016"] { width: .016em; }
+  &[data-gauge=".017"] { width: .017em; }
+  &[data-gauge=".018"] { width: .018em; }
+  &[data-gauge=".019"] { width: .019em; }
+  &[data-gauge=".020"] { width: .020em; }
+  &[data-gauge=".021"] { width: .021em; }
+  &[data-gauge=".022"] { width: .022em; }
+  &[data-gauge=".023"] { width: .023em; }
+  &[data-gauge=".024"] { width: .024em; }
+  &[data-gauge=".025"] { width: .025em; }
+  &[data-gauge=".026"] { width: .026em; }
+  &[data-gauge=".027"] { width: .027em; }
+  &[data-gauge=".028"] { width: .028em; }
+  &[data-gauge=".029"] { width: .029em; }
+  &[data-gauge=".030"] { width: .030em; }
+  &[data-gauge=".031"] { width: .031em; }
+  &[data-gauge=".032"] { width: .032em; }
+  &[data-gauge=".033"] { width: .033em; }
+  &[data-gauge=".034"] { width: .034em; }
+  &[data-gauge=".035"] { width: .035em; }
+  &[data-gauge=".036"] { width: .036em; }
+  &[data-gauge=".037"] { width: .037em; }
+  &[data-gauge=".038"] { width: .038em; }
+  &[data-gauge=".039"] { width: .039em; }
+  &[data-gauge=".040"] { width: .040em; }
+  &[data-gauge=".041"] { width: .041em; }
+  &[data-gauge=".042"] { width: .042em; }
+  &[data-gauge=".043"] { width: .043em; }
+  &[data-gauge=".044"] { width: .044em; }
+  &[data-gauge=".045"] { width: .045em; }
+  &[data-gauge=".046"] { width: .046em; }
+  &[data-gauge=".047"] { width: .047em; }
+  &[data-gauge=".048"] { width: .048em; }
+  &[data-gauge=".049"] { width: .049em; }
+  &[data-gauge=".050"] { width: .050em; }
+  &[data-gauge=".051"] { width: .051em; }
+  &[data-gauge=".052"] { width: .052em; }
+  &[data-gauge=".053"] { width: .053em; }
+  &[data-gauge=".054"] { width: .054em; }
+  &[data-gauge=".055"] { width: .055em; }
+  &[data-gauge=".056"] { width: .056em; }
+  &[data-gauge=".057"] { width: .057em; }
+  &[data-gauge=".058"] { width: .058em; }
+  &[data-gauge=".059"] { width: .059em; }
+  &[data-gauge=".060"] { width: .060em; }
+  &[data-gauge=".061"] { width: .061em; }
+  &[data-gauge=".062"] { width: .062em; }
+  &[data-gauge=".063"] { width: .063em; }
+  &[data-gauge=".064"] { width: .064em; }
+  &[data-gauge=".065"] { width: .065em; }
+  &[data-gauge=".066"] { width: .066em; }
+  &[data-gauge=".067"] { width: .067em; }
+  &[data-gauge=".068"] { width: .068em; }
+  &[data-gauge=".069"] { width: .069em; }
+  &[data-gauge=".070"] { width: .070em; }
+  &[data-gauge=".071"] { width: .071em; }
+  &[data-gauge=".072"] { width: .072em; }
+  &[data-gauge=".073"] { width: .073em; }
+  &[data-gauge=".074"] { width: .074em; }
+  &[data-gauge=".075"] { width: .075em; }
+  &[data-gauge=".076"] { width: .076em; }
+  &[data-gauge=".077"] { width: .077em; }
+  &[data-gauge=".078"] { width: .078em; }
+  &[data-gauge=".079"] { width: .079em; }
+  &[data-gauge=".080"] { width: .080em; }
+  &[data-gauge=".081"] { width: .081em; }
+  &[data-gauge=".082"] { width: .082em; }
+  &[data-gauge=".083"] { width: .083em; }
+  &[data-gauge=".084"] { width: .084em; }
+  &[data-gauge=".085"] { width: .085em; }
+  &[data-gauge=".086"] { width: .086em; }
+  &[data-gauge=".087"] { width: .087em; }
+  &[data-gauge=".088"] { width: .088em; }
+  &[data-gauge=".089"] { width: .089em; }
+  &[data-gauge=".090"] { width: .090em; }
+  &[data-gauge=".091"] { width: .091em; }
+  &[data-gauge=".092"] { width: .092em; }
+  &[data-gauge=".093"] { width: .093em; }
+  &[data-gauge=".094"] { width: .094em; }
+  &[data-gauge=".095"] { width: .095em; }
+  &[data-gauge=".096"] { width: .096em; }
+  &[data-gauge=".097"] { width: .097em; }
+  &[data-gauge=".098"] { width: .098em; }
+  &[data-gauge=".099"] { width: .099em; }
+  &[data-gauge=".100"] { width: .100em; }
+
+  // types
+
+  &[data-type="plain"] {
+    background-image: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, .3) 10%,
+      rgba(255, 255, 255, .25) 15%,
+      rgba(255, 255, 255, .8) 30%,
+      rgba(255, 255, 255, .25) 45%,
+      rgba(0, 0, 0, .7) 90%
+    );
+  }
+
+  &[data-type="wound"] {
+    background-image:
+      repeating-linear-gradient(
+        -8deg,
+        rgba(0, 0, 0, .7) 0,
+        rgba(0, 0, 0, 0) .015em,
+        rgba(0, 0, 0, 0) .02em
+      ),
+      linear-gradient(
+        90deg,
+        rgba(0, 0, 0, .3) 10%,
+        rgba(255, 255, 255, .25) 15%,
+        rgba(255, 255, 255, .8) 30%,
+        rgba(255, 255, 255, .25) 45%,
+        rgba(0, 0, 0, .7) 90%
+      );
+  }
+
+  &[data-type="flat-wound"] {
+    background-image:
+      repeating-linear-gradient(
+        -8deg,
+        rgba(0, 0, 0, .3) 0,
+        rgba(0, 0, 0, 0) .01em,
+        rgba(0, 0, 0, 0) .036em
+      ),
+      linear-gradient(
+        90deg,
+        rgba(0, 0, 0, .3) 10%,
+        rgba(255, 255, 255, .25) 15%,
+        rgba(255, 255, 255, .8) 30%,
+        rgba(255, 255, 255, .25) 45%,
+        rgba(0, 0, 0, .7) 90%
+      );
+  }
+}
+
+.strings > * {
+  // materials
+  &[data-material="steel"] { background-color: #DDD; }
+  &[data-material="nickel"] { background-color: #BA9; }
+  &[data-material="bronze"] { background-color: #F92; }
+
+  &[data-material="nylon"] {
+    background-color: transparent;
+    background-image: linear-gradient(
+      90deg,
+      rgba(215, 255, 255, .7),
+      rgba(215, 255, 255, .4) 30%,
+      rgba(215, 255, 255, .2) 60%,
+      rgba(215, 255, 255, .4) 95%
+    );
+  }
+}
+
+// individual fret styles
+.frets > * {
+  display: block;
+  width: calc(100% - .02em); // 100% - margins
+  margin: .01em;
+  height: .08em; // fret crown width
+  border-radius: .025em;
+
+  background-color: #DDD;
+  background-image:
+    radial-gradient( // left bevel
+      .06em at -.01em .04em,
+      rgba(255, 255, 255, .8),
+      rgba(255, 255, 255, .8) 60%,
+      rgba(255, 255, 255, 0) 90%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    radial-gradient( // right bevel
+      .06em at calc(100% + .01em) .04em,
+      rgba(0, 0, 0, .9),
+      rgba(0, 0, 0, .6) 60%,
+      rgba(0, 0, 0, 0) 90%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    linear-gradient( // fret
+      rgba(0, 0, 0, .3) 10%,
+      rgba(255, 255, 255, .25) 15%,
+      rgba(255, 255, 255, .8) 30%,
+      rgba(255, 255, 255, .25) 45%,
+      rgba(0, 0, 0, .7) 90%
+    );
+}
+
+// fret spacing
+
+.fretboard[data-scale="25.5"] .frets > * {
+  &:nth-child(1)  { margin-top: 1.391em; }
+  &:nth-child(2)  { margin-top: 1.351em; }
+  &:nth-child(3)  { margin-top: 1.275em; }
+  &:nth-child(4)  { margin-top: 1.203em; }
+  &:nth-child(5)  { margin-top: 1.136em; }
+  &:nth-child(6)  { margin-top: 1.072em; }
+  &:nth-child(7)  { margin-top: 1.012em; }
+  &:nth-child(8)  { margin-top: 0.955em; }
+  &:nth-child(9)  { margin-top: 0.902em; }
+  &:nth-child(10) { margin-top: 0.851em; }
+  &:nth-child(11) { margin-top: 0.803em; }
+  &:nth-child(12) { margin-top: 0.758em; }
+  &:nth-child(13) { margin-top: 0.716em; }
+  &:nth-child(14) { margin-top: 0.675em; }
+  &:nth-child(15) { margin-top: 0.638em; }
+  &:nth-child(16) { margin-top: 0.602em; }
+  &:nth-child(17) { margin-top: 0.568em; }
+  &:nth-child(18) { margin-top: 0.536em; }
+  &:nth-child(19) { margin-top: 0.506em; }
+  &:nth-child(20) { margin-top: 0.478em; }
+  &:nth-child(21) { margin-top: 0.451em; }
+  &:nth-child(22) { margin-top: 0.425em; }
+  &:nth-child(23) { margin-top: 0.402em; }
+  &:nth-child(24) { margin-top: 0.379em; }
+}
+
+.fretboard[data-scale="27"] .frets > * {
+  &:nth-child(1)  { margin-top: 1.475em; }
+  &:nth-child(2)  { margin-top: 1.430em; }
+  &:nth-child(3)  { margin-top: 1.350em; }
+  &:nth-child(4)  { margin-top: 1.274em; }
+  &:nth-child(5)  { margin-top: 1.203em; }
+  &:nth-child(6)  { margin-top: 1.135em; }
+  &:nth-child(7)  { margin-top: 1.072em; }
+  &:nth-child(8)  { margin-top: 1.011em; }
+  &:nth-child(9)  { margin-top: 0.955em; }
+  &:nth-child(10) { margin-top: 0.901em; }
+  &:nth-child(11) { margin-top: 0.850em; }
+  &:nth-child(12) { margin-top: 0.803em; }
+  &:nth-child(13) { margin-top: 0.758em; }
+  &:nth-child(14) { margin-top: 0.715em; }
+  &:nth-child(15) { margin-top: 0.675em; }
+  &:nth-child(16) { margin-top: 0.637em; }
+  &:nth-child(17) { margin-top: 0.601em; }
+  &:nth-child(18) { margin-top: 0.568em; }
+  &:nth-child(19) { margin-top: 0.536em; }
+  &:nth-child(20) { margin-top: 0.506em; }
+  &:nth-child(21) { margin-top: 0.477em; }
+  &:nth-child(22) { margin-top: 0.451em; }
+  &:nth-child(23) { margin-top: 0.425em; }
+  &:nth-child(24) { margin-top: 0.401em; }
+}
+
+.fretboard[data-scale="34"] .frets > * {
+  &:nth-child(1)  { margin-top: 1.868em; }
+  &:nth-child(2)  { margin-top: 1.801em; }
+  &:nth-child(3)  { margin-top: 1.700em; }
+  &:nth-child(4)  { margin-top: 1.605em; }
+  &:nth-child(5)  { margin-top: 1.515em; }
+  &:nth-child(6)  { margin-top: 1.430em; }
+  &:nth-child(7)  { margin-top: 1.349em; }
+  &:nth-child(8)  { margin-top: 1.274em; }
+  &:nth-child(9)  { margin-top: 1.202em; }
+  &:nth-child(10) { margin-top: 1.135em; }
+  &:nth-child(11) { margin-top: 1.071em; }
+  &:nth-child(12) { margin-top: 1.011em; }
+  &:nth-child(13) { margin-top: 0.954em; }
+  &:nth-child(14) { margin-top: 0.901em; }
+  &:nth-child(15) { margin-top: 0.850em; }
+  &:nth-child(16) { margin-top: 0.802em; }
+  &:nth-child(17) { margin-top: 0.757em; }
+  &:nth-child(18) { margin-top: 0.715em; }
+  &:nth-child(19) { margin-top: 0.675em; }
+  &:nth-child(20) { margin-top: 0.637em; }
+  &:nth-child(21) { margin-top: 0.601em; }
+  &:nth-child(22) { margin-top: 0.567em; }
+  &:nth-child(23) { margin-top: 0.535em; }
+  &:nth-child(24) { margin-top: 0.505em; }
+}
