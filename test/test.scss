@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css?family=Cinzel+Decorative");
+
+@import '../src/index.scss';
+
+body {
+  width: 2500px;
+  margin: 0;
+  padding: 0 0 40px 0;
+  display: flex;
+  justify-content: space-evenly;
+
+  font-size: 125px;
+  background-color: #111;
+}
+
+.fretboard .inlay {
+    font-family: "Cinzel Decorative", cursive;
+}

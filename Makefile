@@ -12,6 +12,10 @@ clean:
 lint: node_modules
 	node_modules/.bin/sass-lint -v
 
+.PHONY: serve
+serve: node_modules
+	node_modules/.bin/webpack-dev-server
+
 dist/plectrum.css: build/plectrum.css dist
 	cp $< $@
 	cp $<.map $@.map
