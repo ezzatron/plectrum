@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Cinzel+Decorative");
 
+$inlay-font: "Cinzel Decorative", cursive;
+$inlay-font-size: .275em;
+
 @import "../src/index";
 
 body {
@@ -26,6 +29,7 @@ body {
   }
 }
 
-.plectrum .neck > .fretboard > .inlay {
-  font-family: "Cinzel Decorative", cursive;
-}
+// .plectrum .neck > .fretboard > .frets > * > * {
+//   font-family: "Cinzel Decorative", cursive;
+//   font-size: .275em;
+// }

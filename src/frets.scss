@@ -1,49 +1,54 @@
-.plectrum .neck > .fretboard > .frets {
-  width: 100%;
+.plectrum .neck > .fretboard > {
+  .frets,
+  .fretless {
+    width: 100%;
 
-  // fret body
-  > * {
-    display: block;
-    position: relative; // so that fret wires can be absolute
-
-    // fret crowns
-    &:after {
-      content: "";
-      display: block;
-      position: absolute;
-
-      margin: 0 .02em;
-      width: calc(100% - .05em);
-      height: .08em; // fret crown width
-      bottom: -.04em; // so that fret crown sits in the middle
-
-      border-radius: .02em;
-
-      background-color: $color-steel;
-      background-image: radial-gradient(
-        // left bevel
-        .06em at -.01em .04em,
-        rgba(white, .8),
-        rgba(white, .8) 60%,
-        rgba(white, 0) 90%,
-        rgba(white, 0) 100%
-      ),
-      radial-gradient(
-        // right bevel
-        .06em at calc(100% + .01em) .04em,
-        rgba(black, .9),
-        rgba(black, .6) 60%,
-        rgba(black, 0) 90%,
-        rgba(black, 0) 100%
-      ),
-      linear-gradient(
-        // fret
-        rgba(black, .3) 10%,
-        rgba(white, .25) 15%,
-        rgba(white, .8) 30%,
-        rgba(white, .25) 45%,
-        rgba(black, .7) 90%
-      );
+    // fret body
+    > * {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      position: relative; // so that fret wires can be absolute
     }
+  }
+
+  // fret crowns
+  .frets > *:after {
+    content: "";
+    display: block;
+    position: absolute;
+
+    margin: 0 .02em;
+    width: calc(100% - .05em);
+    height: .08em; // fret crown width
+    bottom: -.04em; // so that fret crown sits in the middle
+
+    border-radius: .02em;
+
+    background-color: $color-steel;
+    background-image: radial-gradient(
+      // left bevel
+      .06em at -.01em .04em,
+      rgba(white, .8),
+      rgba(white, .8) 60%,
+      rgba(white, 0) 90%,
+      rgba(white, 0) 100%
+    ),
+    radial-gradient(
+      // right bevel
+      .06em at calc(100% + .01em) .04em,
+      rgba(black, .9),
+      rgba(black, .6) 60%,
+      rgba(black, 0) 90%,
+      rgba(black, 0) 100%
+    ),
+    linear-gradient(
+      // fret
+      rgba(black, .3) 10%,
+      rgba(white, .25) 15%,
+      rgba(white, .8) 30%,
+      rgba(white, .25) 45%,
+      rgba(black, .7) 90%
+    );
   }
 }

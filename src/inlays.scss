@@ -1,13 +1,18 @@
-.plectrum .neck > .fretboard > .inlay {
-  position: absolute; // so that it doesn't affect string layout
-  width: 100%;
-  text-align: center;
-  padding: 1em .5em; // note that ems here are different because of the font size change
+.plectrum .neck > .fretboard {
+  > .frets > *,
+  > .fretless > * {
+    padding: .15em;
 
-  font-size: .3em;
-  font-family: sans-serif;
-  color: #DDDDA6; // approximation of ivory
+    > * {
+      display: block;
+      text-align: center;
 
-  // imitation inset shadow for inlays
-  text-shadow: -.04em -.01em .03em rgba(0, 0, 0, .8), .02em .01em .02em rgba(255, 255, 255, .8);
+      font-size: $inlay-font-size;
+      font-family: $inlay-font;
+      color: $color-ivory; // approximation of ivory
+
+      // imitation inset shadow for inlays
+      text-shadow: -.02em -.01em .01em rgba(0, 0, 0, .6), .015em .01em .01em rgba(255, 255, 255, .4);
+    }
+  }
 }
