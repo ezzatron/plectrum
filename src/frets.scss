@@ -12,9 +12,12 @@
       display: block;
       position: absolute;
 
-      width: 100%;
+      margin: 0 .02em;
+      width: calc(100% - .05em);
       height: .08em; // fret crown width
       bottom: -.04em; // so that fret crown sits in the middle
+
+      border-radius: .02em;
 
       background-color: $color-steel;
       background-image: radial-gradient(
