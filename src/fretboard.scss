@@ -1,0 +1,43 @@
+.plectrum .fretboard {
+  position: relative; // so that contents can be positioned absolute
+  display: flex;
+
+  * {
+    box-sizing: border-box; // make sizing a bit more sane
+  }
+
+  border-bottom-left-radius: .1em;
+  border-bottom-right-radius: .1em;
+
+  // approximation of an ebony fretboard
+  background-image: linear-gradient(
+    // bottom-left highlight
+    45deg,
+    rgba(85, 70, 70, 1),
+    rgba(85, 70, 70, 1) .03em,
+    rgba(85, 70, 70, 0) .07em
+  ),
+  linear-gradient(
+    // bottom-right shadow
+    315deg,
+    rgba(17, 17, 17, 1),
+    rgba(17, 17, 17, 1) .03em,
+    rgba(17, 17, 17, 0) .07em
+  ),
+  linear-gradient(
+    // ebony
+    90deg,
+    #554646,
+    #262222 1.5%,
+    #262222 10%,
+    #302626 40%,
+    #302626 60%,
+    #262222 90%,
+    #262222 98.5%,
+    #111
+  );
+
+  > .inlay   { z-index: 100; } // behind strings and frets
+  > .strings { z-index: 300; } // above inlays and frets
+  > .frets   { z-index: 200; } // above inlays, below strings
+}

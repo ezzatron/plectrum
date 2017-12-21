@@ -1,0 +1,38 @@
+.plectrum .fretboard > .frets {
+  position: absolute; // so that it doesn't affect string layout
+  width: 100%;
+
+  > * {
+    display: block;
+    width: calc(100% - .02em); // 100% - margins
+    margin: .01em;
+    height: .08em; // fret crown width
+    border-radius: .025em;
+
+    background-color: $color-steel;
+    background-image: radial-gradient(
+      // left bevel
+      .06em at -.01em .04em,
+      rgba(white, .8),
+      rgba(white, .8) 60%,
+      rgba(white, 0) 90%,
+      rgba(white, 0) 100%
+    ),
+    radial-gradient(
+      // right bevel
+      .06em at calc(100% + .01em) .04em,
+      rgba(black, .9),
+      rgba(black, .6) 60%,
+      rgba(black, 0) 90%,
+      rgba(black, 0) 100%
+    ),
+    linear-gradient(
+      // fret
+      rgba(black, .3) 10%,
+      rgba(white, .25) 15%,
+      rgba(white, .8) 30%,
+      rgba(white, .25) 45%,
+      rgba(black, .7) 90%
+    );
+  }
+}
