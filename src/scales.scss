@@ -1,4 +1,6 @@
 .plectrum {
+  .neck { @include neck-scale(25.5em, 40); } // default scale
+
   .neck.scale-18     { @include neck-scale(18em, 40); }
   .neck.scale-18-5   { @include neck-scale(18.5em, 40); }
   .neck.scale-19     { @include neck-scale(19em, 40); }
@@ -26,7 +28,6 @@
   .neck.scale-25     { @include neck-scale(25em, 40); }
   .neck.scale-25-125 { @include neck-scale(25.125em, 40); }
   .neck.scale-25-2   { @include neck-scale(25.2em, 40); }
-  .neck.scale-25-5   { @include neck-scale(25.5em, 40); }
   .neck.scale-25-6   { @include neck-scale(25.6em, 40); }
   .neck.scale-26     { @include neck-scale(26em, 40); }
   .neck.scale-26-25  { @include neck-scale(26.25em, 40); }
