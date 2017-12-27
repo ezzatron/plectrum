@@ -7,7 +7,7 @@ $inlay-font-size: .275em;
 
 body {
   box-sizing: border-box;
-  margin: 0;
+  margin: 0 0 30px 0;
 
   background-color: #111;
 }
@@ -28,8 +28,3 @@ body {
     border-right: .5em solid transparent;
   }
 }
-
-// .plectrum .neck > .fretboard > .frets > * > * {
-//   font-family: "Cinzel Decorative", cursive;
-//   font-size: .275em;
-// }
