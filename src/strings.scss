@@ -1,23 +1,27 @@
 .plectrum .neck > .strings {
-  padding: 0 .12em; // default gap between edge of fretboard and outer strings
-  flex-grow: 1; // so that strings take up full width
   display: flex;
   justify-content: space-between; // space strings evenly
+  flex-grow: 1; // so that strings take up full width
+
+  padding: 0 .12em; // default gap between edge of fretboard and outer strings
 
   > * {
     display: block;
 
-    // defaults
-    width: 1px;
-    background-color: $color-steel;
-    background-image: linear-gradient(
+    $string-lighting: linear-gradient(
       90deg,
+      rgba(black, .5),
       rgba(black, .3) 10%,
       rgba(white, .25) 15%,
       rgba(white, .8) 30%,
       rgba(white, .25) 45%,
       rgba(black, .7) 90%
     );
+
+    // defaults
+    width: 1px;
+    background-color: $color-steel;
+    background-image: $string-lighting;
     box-shadow: .04em 0 .02em 0 rgba(black, .5); // string shadow
     border-radius: 1em; // rounded ends
 
@@ -51,14 +55,7 @@
         rgba(black, 0) .015em,
         rgba(black, 0) .02em
       ),
-      linear-gradient(
-        90deg,
-        rgba(black, .3) 10%,
-        rgba(white, .25) 15%,
-        rgba(white, .8) 30%,
-        rgba(white, .25) 45%,
-        rgba(black, .7) 90%
-      );
+      $string-lighting;
     }
 
     &.flat-wound {
@@ -68,14 +65,7 @@
         rgba(black, 0) .01em,
         rgba(black, 0) .036em
       ),
-      linear-gradient(
-        90deg,
-        rgba(black, .3) 10%,
-        rgba(white, .25) 15%,
-        rgba(white, .8) 30%,
-        rgba(white, .25) 45%,
-        rgba(black, .7) 90%
-      );
+      $string-lighting;
     }
   }
 }
