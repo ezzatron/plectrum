@@ -24,8 +24,10 @@ dist/plectrum.min.css: build/plectrum.min.css dist
 	cp $< $@
 	cp $<.map $@.map
 
-build/index.css: src/index.scss build
-	node_modules/.bin/node-sass --output build --source-map true --source-map-contents $<
+SOURCES := $(shell find src)
+
+build/index.css: $(shell find src) build
+	node_modules/.bin/node-sass --output build --source-map true --source-map-contents src/index.scss
 
 build/plectrum.css: build/index.css
 	node_modules/.bin/postcss --use autoprefixer -b 'last 2 versions' --map --output $@ $<
