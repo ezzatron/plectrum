@@ -7,3 +7,5 @@ $color-ivory: #DDA !default;
 $color-nickel: #BA9 !default;
 $color-nylon: #DFF !default;
 $color-steel: #DDD !default;
+
+$color-ebony-highlight: saturate(lighten($color-ebony, 10%), 10%);

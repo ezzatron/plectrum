@@ -15,7 +15,6 @@
   // fret crowns
   .frets > *:after {
     content: "";
-    display: block;
     position: absolute;
 
     width: calc(100% - .04em);

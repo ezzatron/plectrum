@@ -3,61 +3,70 @@
   display: flex;
   width: 100%;
 
-  padding-bottom: .2em;
+  padding-bottom: .2em; // gap after last fret
 
+  // rounded bottom
   border-bottom-left-radius: .1em;
   border-bottom-right-radius: .1em;
 
   // approximation of an ebony fretboard
+  background-color: $color-ebony;
   background-image: linear-gradient(
     // bottom-left highlight
     45deg,
-    rgba(85, 70, 70, 1),
-    rgba(85, 70, 70, 1) .03em,
-    rgba(85, 70, 70, 0) .07em
+    rgba(white, .1),
+    rgba(white, .1) .03em,
+    rgba(white, 0) .07em
   ),
   linear-gradient(
     // bottom-right shadow
     315deg,
-    rgba(17, 17, 17, 1),
-    rgba(17, 17, 17, 1) .03em,
-    rgba(17, 17, 17, 0) .07em
+    rgba(black, .1),
+    rgba(black, .1) .03em,
+    rgba(black, 0) .07em
   ),
   linear-gradient(
-    // ebony
     90deg,
-    #554646,
-    #262222 1.5%,
-    #262222 10%,
-    #302626 40%,
-    #302626 60%,
-    #262222 90%,
-    #262222 98.5%,
-    #111
-  );
 
-  > .inlay { z-index: 100; }
-  > .frets { z-index: 200; }
+    // left highlight
+    rgba(white, .1),
+    rgba(white, .1) .02em,
+    rgba(white, 0) .04em,
+
+    // center highlight
+    rgba($color-ebony-highlight, 0) 10%,
+    rgba($color-ebony-highlight, .5) 40%,
+    rgba($color-ebony-highlight, .5) 60%,
+    rgba($color-ebony-highlight, 0) 90%,
+
+    // right shadow
+    rgba(black, 0) calc(100% - .04em),
+    rgba(black, .2) calc(100% - .02em),
+    rgba(black, .4)
+  );
 
   // bottom shadow
   &:after {
     content: "";
     position: absolute;
-    display: block;
 
+    // positioning
+    top: calc(100% - .025em);
+    height: .025em;
+
+    // attempt to line up with bottom radius
     margin: 0 .05em;
     width: calc(100% - .1em);
-    height: .025em;
-    top: calc(100% - .025em);
-
     border-bottom-left-radius: 1em;
     border-bottom-right-radius: 1em;
 
     background-image: linear-gradient(
+      // fade to transparent at edges
       rgba(black, 0),
       rgba(black, .2)
     ),
     linear-gradient(
+      // shadow
       90deg,
       rgba(black, 0),
       rgba(black, .2) .1em,
@@ -65,4 +74,7 @@
       rgba(black, 0)
     );
   }
+
+  > .inlay { z-index: 100; }
+  > .frets { z-index: 200; }
 }
