@@ -3,9 +3,11 @@ $inlay-font-size: .25em !default;
 
 $color-bronze: #F92 !default;
 $color-ebony: #262222 !default;
-$color-ivory: #DDA !default;
+$color-ivory: #EFE8C9 !default;
+$color-maple: #FD9 !default;
 $color-nickel: #BA9 !default;
 $color-nylon: #DFF !default;
 $color-steel: #DDD !default;
 
 $color-ebony-highlight: saturate(lighten($color-ebony, 10%), 10%);
+$color-maple-highlight: lighten($color-maple, 3%);

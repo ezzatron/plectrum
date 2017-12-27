@@ -75,6 +75,44 @@
     );
   }
 
+  &.maple {
+    // approximation of an maple fretboard
+    background-color: $color-maple;
+    background-image: linear-gradient(
+      // bottom-left highlight
+      45deg,
+      rgba(white, .1),
+      rgba(white, .1) .03em,
+      rgba(white, 0) .07em
+    ),
+    linear-gradient(
+      // bottom-right shadow
+      315deg,
+      rgba(black, .1),
+      rgba(black, .1) .03em,
+      rgba(black, 0) .07em
+    ),
+    linear-gradient(
+      90deg,
+
+      // left highlight
+      rgba(white, .1),
+      rgba(white, .1) .02em,
+      rgba(white, 0) .04em,
+
+      // center highlight
+      rgba($color-maple-highlight, 0) 10%,
+      rgba($color-maple-highlight, .5) 40%,
+      rgba($color-maple-highlight, .5) 60%,
+      rgba($color-maple-highlight, 0) 90%,
+
+      // right shadow
+      rgba(black, 0) calc(100% - .04em),
+      rgba(black, .2) calc(100% - .02em),
+      rgba(black, .4)
+    );
+  }
+
   > .inlay { z-index: 100; }
   > .frets { z-index: 200; }
 }

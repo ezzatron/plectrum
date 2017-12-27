@@ -9,10 +9,14 @@
 
       font-size: $inlay-font-size;
       font-family: $inlay-font;
-      color: $color-ivory; // approximation of ivory
+      color: $color-ivory;
 
       // imitation inset shadow for inlays
-      text-shadow: -.02em -.01em .01em rgba(0, 0, 0, .6), .015em .01em .01em rgba(255, 255, 255, .4);
+      text-shadow: -.01em -.01em .01em rgba(0, 0, 0, .3), .01em .01em .01em rgba(255, 255, 255, .3);
+
+      &.ebony {
+        color: $color-ebony;
+      }
     }
   }
 }
